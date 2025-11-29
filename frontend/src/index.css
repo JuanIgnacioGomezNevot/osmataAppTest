@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  color-scheme: light;
+}
+
+:root.dark {
+  color-scheme: dark;
+}
+
+body {
+  @apply antialiased;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(circle at 15% 25%, rgba(16, 185, 129, 0.25), transparent 40%),
+    radial-gradient(circle at 85% 10%, rgba(52, 211, 153, 0.25), transparent 45%),
+    linear-gradient(135deg, #f0fdf4, #dcfce7);
+  background-attachment: fixed;
+  background-size: cover;
+  color: #0f172a;
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+:root.dark body {
+  background-image:
+    radial-gradient(circle at 25% 20%, rgba(16, 185, 129, 0.35), transparent 35%),
+    radial-gradient(circle at 80% 0%, rgba(5, 150, 105, 0.35), transparent 45%),
+    linear-gradient(135deg, #022c22, #064e3b);
+  color: #e2e8f0;
+}
+
+@layer base {
+  input:not([type='checkbox']),
+  select,
+  textarea {
+    @apply rounded-2xl border border-emerald-100/70 bg-white/80 px-4 py-2 text-sm text-emerald-900 shadow-sm transition focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/30 dark:border-emerald-600/40 dark:bg-emerald-950/40 dark:text-emerald-50 dark:focus:border-brand-secondary dark:focus:ring-brand-secondary/40;
+  }
+
+  input[type='checkbox'] {
+    @apply rounded border-emerald-300 text-brand-primary focus:ring-brand-primary dark:border-emerald-600 dark:bg-emerald-950 dark:text-brand-secondary;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply rounded-2xl bg-gradient-to-r from-brand-primary to-brand-secondary px-4 py-2 text-sm font-semibold text-white shadow-glow transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-brand-primary/50 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-ghost {
+    @apply rounded-2xl border border-emerald-100/70 px-4 py-2 text-sm font-semibold text-emerald-900 transition hover:border-brand-primary hover:text-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/30 dark:border-emerald-700/60 dark:text-emerald-50 dark:hover:text-brand-primary;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(180deg, #059669, #34d399);
+  border-radius: 999px;
+}
