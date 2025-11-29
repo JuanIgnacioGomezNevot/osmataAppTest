@@ -4,7 +4,7 @@ Aplicación full-stack para la obra social OSMATA que centraliza turnos médicos
 
 ## Tecnologías principales
 
-- **Backend:** Node.js, Express, Prisma ORM (SQLite por defecto), JWT, bcrypt, Nodemailer, express-validator.
+- **Backend:** Node.js, Express, Prisma ORM (PostgreSQL), JWT, bcrypt, Nodemailer, express-validator.
 - **Frontend:** React + Vite + TypeScript, React Router, TailwindCSS, React Hook Form.
 - **Infraestructura:** Arquitectura por capas (rutas → controladores → servicios → Prisma), validación centralizada, middlewares de autenticación/roles, documentación Swagger y seeds de datos.
 
@@ -55,7 +55,7 @@ frontend/  SPA en React + Tailwind
 ```bash
 cd backend
 npm install
-npm run migrate      # crea el schema SQLite
+npm run migrate      # aplica migraciones en PostgreSQL (usa DATABASE_URL)
 npm run seed         # datos iniciales: usuarios demo, sectores, doctores, stock
 npm run dev          # levanta API en http://localhost:4000
 ```
