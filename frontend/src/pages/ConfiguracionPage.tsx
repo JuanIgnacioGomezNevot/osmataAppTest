@@ -39,7 +39,7 @@ export default function ConfiguracionPage() {
           {sectors.map((sec) => (
             <div key={sec.id} className="rounded-3xl border border-slate-100 p-4">
               <p className="text-sm text-slate-500">Sector</p>
-              <p className="text-lg font-semibold text-slate-800">{sec.nombre}</p>
+              <p className="text-lg font-semibold text-slate-400">{sec.nombre}</p>
               <p className="text-xs text-slate-500">{sec.descripcion}</p>
             </div>
           ))}

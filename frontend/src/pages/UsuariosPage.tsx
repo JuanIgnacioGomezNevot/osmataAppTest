@@ -36,7 +36,7 @@ export default function UsuariosPage() {
       <PageSection title="Usuarios" description="Control de roles y altas rápidas">
         <div className="overflow-auto rounded-2xl border border-slate-100">
           <table className="min-w-full text-sm">
-            <thead className="bg-brand-light">
+            <thead className="bg-brand-light text-slate-700 font-medium">
               <tr>
                 <th className="p-3 text-left">Nombre</th>
                 <th className="p-3 text-left">Email</th>
